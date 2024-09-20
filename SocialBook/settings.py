@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import dj_database_url
+#import dj_database_url
 from pathlib import Path
 import os
 
@@ -21,16 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'django-insecure-y6on4&^y1+^c$5_h4eh-i2fz-c6jmagos9$5b!o!%8=08s#!tm'
 
 #django-insecure-2&*$b-%(x*6$xb-h+q+j%2ag&!^&!15qll#6*mxqzdconsy9k#
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG","False").lower()=="true"
+DEBUG = True
 
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split()
-
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -75,7 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SocialBook.wsgi.application'
 
-
+#postgresql://django_render_zs92_user:Z1iL0qLCwU4062ioNukGVsymAMDiGTqy@dpg-crmnv1q3esus7380mlkg-a.oregon-postgres.render.com/django_render_zs92
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -85,8 +84,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url= os.environ.get("DATABASE_URL")
-DATABASES["default"]=dj_database_url.parse(database_url)
+#database_url= os.environ.get("DATABASE_URL")
+#DATABASES["default"]=dj_database_url.parse(database_url)
+#DATABASES["default"]=dj_database_url.parse("postgresql://django_render_zs92_user:Z1iL0qLCwU4062ioNukGVsymAMDiGTqy@dpg-crmnv1q3esus7380mlkg-a.oregon-postgres.render.com/django_render_zs92")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
